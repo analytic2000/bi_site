@@ -17,7 +17,7 @@
             
             --accent-cyan: #00f0ff;
             --accent-purple: #7000ff;
-            --accent-green: #00d26a; /* Для кнопки Kwork */
+            --accent-green: #00d26a;
             
             --text-main: #f0f4f8;
             --text-muted: #94a3b8;
@@ -45,7 +45,6 @@
         }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-        /* Каскадное появление карточек */
         .stagger-item {
             opacity: 0;
             transform: translateY(30px);
@@ -63,7 +62,6 @@
             100% { box-shadow: 0 0 0 0 rgba(0, 240, 255, 0); }
         }
 
-        /* Анимация плавающего фонового шара */
         @keyframes float {
             0% { transform: translate(0, 0) scale(1); }
             50% { transform: translate(30px, 50px) scale(1.1); }
@@ -79,7 +77,6 @@
             animation: float 10s infinite ease-in-out;
         }
 
-        /* Бегущая строка */
         @keyframes marquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -174,7 +171,6 @@
         /* ================= КОНТЕНТ ================= */
         .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; position: relative; }
 
-        /* Главный баннер */
         .hero { text-align: center; margin-bottom: 60px; position: relative; }
         .hero h1 {
             font-size: 48px;
@@ -237,7 +233,7 @@
         .benefit-card h3 { font-size: 18px; color: var(--accent-cyan); margin-bottom: 10px; }
         .benefit-card p { font-size: 14px; color: var(--text-muted); }
 
-        /* ================= СЕКЦИЯ: МАРКЕТПЛЕЙСЫ (Картинка + Текст) ================= */
+        /* ================= СЕКЦИЯ: МАРКЕТПЛЕЙСЫ ================= */
         .marketplace-section {
             display: flex;
             gap: 50px;
@@ -275,7 +271,7 @@
         }
         .marketplace-image img:hover { transform: scale(1.02); }
 
-        /* ================= Две колонки (Навыки) ================= */
+        /* ================= СЕКЦИЯ НАВЫКИ ================= */
         .features-section { display: flex; gap: 50px; align-items: flex-start; }
         .features-text { flex: 1; }
         .features-text h2 { font-size: 28px; margin-bottom: 30px; color: white; }
@@ -316,7 +312,7 @@
         }
         .features-image img:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0, 240, 255, 0.1); }
 
-        /* ================= ГАЛЕРЕЯ ПОРТФОЛИО ================= */
+        /* ================= ГАЛЕРЕЯ ================= */
         .portfolio-section { margin-top: 40px; }
         .portfolio-section h2 { font-size: 32px; margin-bottom: 30px; text-align: center; color: white; }
 
@@ -354,7 +350,7 @@
         .gallery-item:hover .gallery-overlay { opacity: 1; }
         .gallery-item:hover .gallery-overlay span { transform: translateY(0); }
 
-        /* ================= ПРИЗЫВ К ДЕЙСТВИЮ (CTA) ================= */
+        /* ================= CTA ================= */
         .cta-section {
             margin-top: 60px;
             padding: 60px 20px;
@@ -468,9 +464,8 @@
         .lightbox.active img { transform: scale(1); }
         .lightbox-close { top: 30px; right: 40px; font-size: 50px; color: white; }
 
-        /* Мобильная адаптация */
         @media (max-width: 768px) {
-            .header-buttons .btn-kwork { display: none; } /* Скрываем на телефоне для экономии места */
+            .header-buttons .btn-kwork { display: none; }
             nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
             .features-section, .marketplace-section { flex-direction: column; padding: 20px; }
             .features-image { position: static; margin-top: 30px; }
@@ -483,17 +478,14 @@
 </head>
 <body>
 
-    <!-- Шапка сайта -->
     <header>
         <div class="logo">Data<span>Analytic.</span></div>
         <div class="header-buttons">
-            <!-- Ссылка на Kwork -->
             <a href="https://kwork.ru/user/bi_analytics" target="_blank" class="btn-kwork">Мои услуги на Kwork</a>
             <button class="btn-contact" onclick="openModal()">Связаться со мной</button>
         </div>
     </header>
 
-    <!-- Навигация -->
     <nav>
         <ul>
             <li><a href="#benefits">Польза</a></li>
@@ -503,23 +495,18 @@
         </ul>
     </nav>
 
-    <!-- Бегущая строка -->
     <div class="marquee-wrapper">
         <div class="marquee-content">
             <span>Power BI</span> <span>•</span> <span>Qlik Sense</span> <span>•</span> <span>Python ETL</span> <span>•</span> <span>SQL</span> <span>•</span> <span>Дашборды для маркетплейсов</span> <span>•</span> <span>Автоматизация отчетности</span> <span>•</span>
-            <!-- Дублируем для бесконечности -->
             <span>Power BI</span> <span>•</span> <span>Qlik Sense</span> <span>•</span> <span>Python ETL</span> <span>•</span> <span>SQL</span> <span>•</span> <span>Дашборды для маркетплейсов</span> <span>•</span> <span>Автоматизация отчетности</span> <span>•</span>
         </div>
     </div>
 
-    <!-- Основной контент -->
     <div class="container">
         
-        <!-- Плавающий фоновый шар -->
         <div class="glow-orb" style="top: 5%; left: -100px;"></div>
         <div class="glow-orb" style="top: 40%; right: -100px; background: rgba(0, 240, 255, 0.1); animation-delay: -5s;"></div>
 
-        <!-- Главный экран -->
         <section class="hero fade-in">
             <h1>Бизнес аналитика по делу</h1>
             <p>BI-разработчик и аналитик данных с опытом более 5 лет. Специализируюсь на создании аналитических решений, автоматизации отчётности и обработке данных. Моя задача — не просто подготовить отчёт, а создать полезный инструмент для принятия решений.</p>
@@ -529,31 +516,26 @@
 
         <hr class="fade-in">
 
-        <!-- СЕКЦИЯ: ПОЛЬЗА ДЛЯ БИЗНЕСА (4 карточки) -->
         <section class="benefits-section fade-in" id="benefits">
             <h2>Почему это важно для вашего бизнеса?</h2>
             <p>Данные — это новая нефть. Но без правильной переработки они бесполезны. Я помогаю превратить хаос цифр в четкие стратегии.</p>
 
             <div class="benefits-grid">
-                <!-- Карточка 1 -->
                 <div class="benefit-card stagger-item">
                     <div class="benefit-icon">🚀</div>
                     <h3>Для малого бизнеса</h3>
                     <p>Перестаньте вести учет в 10 Excel-таблицах. Единый дашборд покажет реальную прибыль, маржинальность и кассовые разрывы. Собственник видит картину целиком за 1 минуту в день.</p>
                 </div>
-                <!-- Карточка 2 -->
                 <div class="benefit-card stagger-item">
                     <div class="benefit-icon">📦</div>
                     <h3>Для селлеров WB / Ozon</h3>
                     <p>Сложные расчеты логистики, комиссий и штрафов маркетплейсов. Дашборд покажет реальную юнит-экономику каждого товара, оборачиваемость складов и поможет не уйти в минус на акциях.</p>
                 </div>
-                <!-- Карточка 3 -->
                 <div class="benefit-card stagger-item">
                     <div class="benefit-icon">📊</div>
                     <h3>Для среднего бизнеса</h3>
                     <p>Интеграция данных из 1С, CRM (Битрикс24, amoCRM) и сайта. Автоматические отчеты для отдела продаж и руководства. Контроль KPI менеджеров в реальном времени без ручных сводок.</p>
                 </div>
-                <!-- Карточка 4 -->
                 <div class="benefit-card stagger-item">
                     <div class="benefit-icon">💰</div>
                     <h3>Для финансов</h3>
@@ -564,7 +546,6 @@
 
         <hr class="fade-in">
 
-        <!-- СЕКЦИЯ: МАРКЕТПЛЕЙСЫ И СЕЛЛЕРЫ (Картинка + Текст) -->
         <section class="marketplace-section fade-in">
             <div class="marketplace-text">
                 <h2>Аналитика для селлеров Wildberries и Ozon</h2>
@@ -577,14 +558,12 @@
                 </ul>
             </div>
             <div class="marketplace-image">
-                <!-- Используем вашу новую картинку -->
                 <img src="https://images.unsplash.com/photo-1599658880436-c61792e70672?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Аналитика бизнеса">
             </div>
         </section>
 
         <hr class="fade-in">
 
-        <!-- Секция Навыки -->
         <section class="features-section" id="skills">
             <div class="features-text fade-in">
                 <h2>Мои навыки и компетенции</h2>
@@ -618,12 +597,10 @@
 
         <hr class="fade-in">
 
-        <!-- ГАЛЕРЕЯ ПОРТФОЛИО -->
         <section class="portfolio-section fade-in" id="portfolio">
             <h2>Примеры моих работ</h2>
             <div class="gallery-grid">
                 
-                <!-- Картинка 1 -->
                 <div class="gallery-item" onclick="openLightbox('Пример отчета для производства.png')">
                     <img src="Пример отчета для производства.png" alt="Пример отчета для производства">
                     <div class="gallery-overlay">
@@ -631,7 +608,6 @@
                     </div>
                 </div>
 
-                <!-- Картинка 2 -->
                 <div class="gallery-item" onclick="openLightbox('Пример отчета по продажам.png')">
                     <img src="Пример отчета по продажам.png" alt="Пример отчета по продажам">
                     <div class="gallery-overlay">
@@ -644,13 +620,11 @@
 
         <hr class="fade-in">
 
-        <!-- Призыв к действию -->
         <section class="cta-section fade-in" id="contact">
             <h2>Готовы принимать решения на основе данных?</h2>
             <p style="color:var(--text-muted); max-width: 600px; margin: 0 auto;">Давайте обсудим вашу задачу. Я помогу спроектировать дашборд, который сэкономит ваше время и увеличит прибыль.</p>
             
             <div class="cta-buttons">
-                <!-- Ссылка на Kwork большая -->
                 <a href="https://kwork.ru/user/bi_analytics" target="_blank" class="btn-kwork-large">Посмотреть цены на Kwork</a>
                 <button class="btn-cta" onclick="openModal()">Написать мне напрямую</button>
             </div>
@@ -658,7 +632,6 @@
 
     </div>
 
-    <!-- Подвал -->
     <footer>
         <div class="footer-logo">Data<span>Analytic.</span></div>
         <div class="footer-text">
@@ -668,29 +641,33 @@
         <a href="https://kwork.ru/user/bi_analytics" target="_blank" class="footer-link">Мой профиль на Kwork &rarr;</a>
     </footer>
 
-    <!-- ЛАЙТБОКС -->
     <div class="lightbox" id="imageLightbox">
         <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
         <img id="lightboxImg" src="" alt="Просмотр портфолио">
     </div>
 
-    <!-- МОДАЛЬНОЕ ОКНО -->
+    <!-- ОБНОВЛЕННОЕ МОДАЛЬНОЕ ОКНО С ФОРМОЙ -->
     <div class="modal-overlay" id="contactModal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
             <h2>Обсудить проект</h2>
-            <form onsubmit="event.preventDefault(); alert('Заявка отправлена! (Это демо)'); closeModal();">
-                <input type="text" placeholder="Ваше имя" required>
-                <input type="email" placeholder="Email или Telegram" required>
-                <textarea rows="3" placeholder="Кратко опишите задачу..."></textarea>
-                <button type="submit">Отправить</button>
+            
+            <!-- ВАЖНО: Вставьте сюда ваш ключ из Web3Forms -->
+            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="60af0df8-06b1-472d-adf1-cf3bb8612c92">
+                <input type="checkbox" name="botcheck" style="display: none;">
+
+                <input type="text" name="name" placeholder="Ваше имя" required>
+                <input type="email" name="email" placeholder="Email или Telegram" required>
+                <textarea name="message" rows="3" placeholder="Кратко опишите задачу..."></textarea>
+                
+                <button type="submit" id="submitBtn">Отправить</button>
             </form>
         </div>
     </div>
 
-    <!-- JAVASCRIPT -->
     <script>
-        // Анимация при прокрутке
+        // 1. Анимация при прокрутке
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -703,7 +680,7 @@
             observer.observe(el);
         });
 
-        // Модальное окно (Форма)
+        // 2. Модальное окно
         const modal = document.getElementById('contactModal');
         function openModal() {
             modal.classList.add('active');
@@ -712,12 +689,52 @@
         function closeModal() {
             modal.classList.remove('active');
             document.body.style.overflow = '';
+            // Очищаем форму при закрытии
+            document.getElementById('contactForm').reset();
+            document.getElementById('submitBtn').innerText = 'Отправить';
+            document.getElementById('submitBtn').disabled = false;
         }
         modal.addEventListener('click', (e) => {
             if (e.target === modal) closeModal();
         });
 
-        // Лайтбокс
+        // 3. Отправка формы (Web3Forms)
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Предотвращаем перезагрузку
+
+            submitBtn.innerText = 'Отправка...';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(form);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    alert('Спасибо! Ваша заявка отправлена. Я свяжусь с вами в ближайшее время.');
+                    closeModal();
+                } else {
+                    console.log(response);
+                    alert(json.message || 'Произошла ошибка при отправке.');
+                    submitBtn.innerText = 'Отправить';
+                    submitBtn.disabled = false;
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+                alert('Ошибка сети. Проверьте интернет и попробуйте снова.');
+                submitBtn.innerText = 'Отправить';
+                submitBtn.disabled = false;
+            });
+        });
+
+        // 4. Лайтбокс
         const lightbox = document.getElementById('imageLightbox');
         const lightboxImg = document.getElementById('lightboxImg');
 
